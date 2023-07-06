@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools">
+  xmlns:tools="http://schemas.android.com/tools"
+  package="vn.map4d.androidauto.demo">
+
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="androidx.car.app.NAVIGATION_TEMPLATES" />
 
   <application
     android:allowBackup="true"
@@ -12,6 +18,11 @@
     android:supportsRtl="true"
     android:theme="@style/Theme.AndroidAutoDemo"
     tools:targetApi="31">
+
+    <meta-data
+      android:name="vn.map4d.map.ACCESS_KEY"
+      android:value="d05a749e6c445418349e17b6448f210f" />
+
     <activity
       android:name=".MainActivity"
       android:exported="true">
@@ -21,6 +32,28 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
+
+    <meta-data
+      android:name="com.google.android.gms.car.application"
+      android:resource="@xml/automotive_app_desc"
+      tools:ignore="MetadataTagInsideApplicationTag" />
+
+    <meta-data
+      android:name="androidx.car.app.minCarApiLevel"
+      android:value="1"
+      tools:ignore="MetadataTagInsideApplicationTag" />
+
+    <service
+      android:name=".service.Map4dCarAppService"
+      android:exported="true"
+      tools:ignore="ExportedService">
+      <intent-filter>
+        <action android:name="androidx.car.app.CarAppService" />
+
+        <category android:name="androidx.car.app.category.NAVIGATION" />
+      </intent-filter>
+    </service>
+
   </application>
 
 </manifest>
