@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
   override fun onMapReady(map: Map4D?) {
 
-    // Add a marker in Sydney and move the camera
+    // Add a marker in Da Nang and move the camera
     val danang = MFLocationCoordinate(16.075884, 108.228932)
     map?.addMarker(MFMarkerOptions().position(danang).title("Marker in Da Nang"))
     map?.moveCamera(MFCameraUpdateFactory.newCoordinate(danang))
