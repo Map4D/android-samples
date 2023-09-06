@@ -17,11 +17,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     super.onCreate(savedInstanceState)
     binding = ActivityMainBinding.inflate(layoutInflater)
     setContentView(binding.root)
-
-    // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-    val mapFragment: MFSupportMapFragment? = supportFragmentManager
-      .findFragmentById(R.id.map) as MFSupportMapFragment?
-    mapFragment?.getMapAsync(this)
+    binding.map.getMapAsync(this)
   }
 
   override fun onMapReady(map: Map4D?) {
