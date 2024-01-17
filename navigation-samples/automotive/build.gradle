@@ -1,0 +1,49 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'vn.map4d.automotive.navigation.demo'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "vn.map4d.automotive.navigation.demo"
+        minSdk 29
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation "vn.map4d:Map4dServices:$map4d_services_version"
+    implementation "vn.map4d:Map4dTypes:$map4d_type_version"
+    implementation "vn.map4d:Map4dMap:$map4d_map_sdk_version"
+    implementation "vn.map4d:Map4dMapAndroidAuto:$map4d_map_auto_sdk_version"
+    implementation "vn.map4d:Map4dNavigationAndroidAuto:$map4d_navigation_auto_sdk_version"
+    implementation "vn.map4d:Map4dNavigationCore:$map4d_navigation_core_sdk_version"
+    implementation "androidx.car.app:app-automotive:$car_app_library_version"
+
+    implementation 'com.google.android.material:material:1.9.0'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

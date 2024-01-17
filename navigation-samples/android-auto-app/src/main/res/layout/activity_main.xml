@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="app.MainActivity">
+
+    <vn.map4d.map.core.MFMapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:srcCompat="@drawable/ic_destination_location" />
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:text="Clear"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:text="Start"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnAddCoordinate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:text="Add"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/simulateCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="10dp"
+        android:checked="true"
+        android:text="Simulate Route" />
+
+    <RadioGroup
+        android:id="@+id/languageChooser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/simulateCheckBox"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="10dp"
+        android:checkedButton="@id/viRadio"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/viRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="vi" />
+
+        <RadioButton
+            android:id="@+id/enRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="en" />
+    </RadioGroup>
+
+</RelativeLayout>
